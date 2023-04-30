@@ -1,24 +1,27 @@
-let numero;
-let continuar = true;
-
-while (continuar) {
-  numero = parseFloat(prompt("Ingrese un número del 1 al 10"));
-
-  while (numero < 1 || numero > 10 || isNaN(numero)) {
-    console.log('Ingresó un número no válido. Inténtelo de nuevo.');
-    numero = parseFloat(prompt("Ingrese un número del 1 al 10"));
+let meses30 = ["abril", "junio", "septiembre", "noviembre"];
+let meses31 = ["enero", "marzo", "mayo", "julio", "agosto", "octubre", "diciembre"];
+let febrero = "febrero";
+let seguirIngresando = true;
+while (seguirIngresando) {
+  let mesIngresado = prompt("Ingrese el mes que desea reservar (por ejemplo, enero, febrero, marzo, etc.):");
+  mesIngresado = mesIngresado.toLowerCase();
+  let diaIngresado = parseInt(prompt("Ingrese el dia que desea reservar (por ejemplo, 1, 2, 3, etc.):"));
+  if (meses30.includes(mesIngresado)) {
+  } 
+  else if (meses31.includes(mesIngresado)) {
+  } 
+  else if (mesIngresado === febrero) {
   }
-
-  if (numero > 4) {
-    console.log('Tu número está entre 5 y 10');
-  } else {
-    console.log('Tu número es menor a 5');
+  else {
+    alert("El dia o el mes ingresado no es válido. Por favor, verifique los datos");
+    continue;
   }
-
-  let respuesta = prompt("Ingrese 'terminar' para salir de lo contrario ingrese cualquier cosa para continuar ingresando números");
-
-  if (respuesta === "terminar") {
-    continuar = false;
-    console.log('termino el programa')
+  let nombre = prompt("Ingrese su nombre:");
+  let apellido = prompt("Ingrese su apellido:");
+  alert("La Reserva para " + nombre + " " + apellido + " en el mes de " + mesIngresado + " y el día " + diaIngresado + " fue exitosa");
+  let respuesta = prompt("¿Quieres hacer otra reserva? (si o no)");
+  if (respuesta.toLowerCase() !== "sí" && respuesta.toLowerCase() !== "si") {
+    seguirIngresando = false;
   }
 }
+alert("Programa de reserva finalizado");
