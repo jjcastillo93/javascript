@@ -57,7 +57,7 @@ while (continuarReservando) {
 }
 
 console.log(reservas);
-
+/*este cliclo busca eliminar una vez que eliminarReserva sea verdadero las reservas encontradas en el array*/
 let eliminarReserva = confirm("¿Desea eliminar una reserva?");
 while (eliminarReserva) {
   let nombreEliminar = prompt("Ingrese el nombre asociado a la reserva que desea eliminar:");
